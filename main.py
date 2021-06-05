@@ -1,6 +1,7 @@
 
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_cors import CORS
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon')
@@ -9,6 +10,7 @@ nltk.download('vader_lexicon')
 sid = SentimentIntensityAnalyzer()
 
 app = Flask(__name__)
+cors = CORS(app)
 api = Api(app)
 
 
